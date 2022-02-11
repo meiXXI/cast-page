@@ -18,6 +18,8 @@ jobs:
 
       - name: Install App...
         run: yarn install
+        working-directory: custom-receiver
 
       - name: Build App...
         run: yarn build
+        working-directory: custom-receiver
