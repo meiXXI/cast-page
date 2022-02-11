@@ -7,6 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PUBLIC_URL: /cast-page
     steps:
       - name: Check out sources...
         uses: actions/checkout@v2
