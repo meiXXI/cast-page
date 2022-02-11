@@ -20,14 +20,14 @@ jobs:
 
       - name: Install App...
         run: yarn install
-        working-directory: custom-receiver
+        working-directory: web-receiver
 
       - name: Build App...
         run: yarn build
-        working-directory: custom-receiver
+        working-directory: web-receiver
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.3
         with:
           branch: gh-pages
-          folder: custom-receiver/build
+          folder: web-receiver/build
