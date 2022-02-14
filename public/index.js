@@ -25,12 +25,15 @@ connect = function () {
  * Init cast API
  */
 initializeCastApi = function () {
-    cast.framework.CastContext.getInstance().setOptions({
+    
+    var THE_INSTANCE = cast.framework.CastContext.getInstance();
+    THE_INSTANCE.setOptions({
         receiverApplicationId: applicationId,
         autoJoinPolicy: chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED
     });
 
-    console.log("init completed.")
+    console.log(THE_INSTANCE);
+    console.log("init completed.");
 
     // cast.framework.CastContext.getInstance().setOptions({
     //     receiverApplicationId: applicationId,
