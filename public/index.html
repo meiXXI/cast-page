@@ -19,8 +19,16 @@
 </head>
 
 <body>
+    <script>
+        window['__onGCastApiAvailable'] = function (isAvailable) {
+            if (isAvailable) {
+                initializeCastApi();
+            }
+        };
+    </script>
+
     <script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
-    
+
     <div class="container">
         <div class="row mt-5">
             <div class="col">
@@ -41,7 +49,7 @@
         </div>
     </div>
 
-    
+
 </body>
 
 </html>
