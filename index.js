@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    console.log("document ready.");
+
     // bind buttons
     $("#btnConnect").bind("click", connect);
 });
@@ -21,4 +23,6 @@ initializeCastApi = function () {
         receiverApplicationId: applicationId,
         autoJoinPolicy: chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED
     });
+
+    console.log("cast api has been initialized...");
 };

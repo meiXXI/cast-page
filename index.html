@@ -11,6 +11,8 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
 
+    <script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
+
     <!-- jquery 3.6 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -19,15 +21,20 @@
 </head>
 
 <body>
+    
+
     <script>
         window['__onGCastApiAvailable'] = function (isAvailable) {
             if (isAvailable) {
+                console.log("API is available.");
                 initializeCastApi();
+            } else {
+                console.log("API is NOT available.");
             }
         };
     </script>
 
-    <script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
+    
 
     <div class="container">
         <div class="row mt-5">
