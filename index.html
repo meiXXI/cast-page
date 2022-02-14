@@ -1,9 +1,41 @@
 <html>
+
 <head>
     <title>Sender App</title>
+    <link rel="icon" href="./favicon.ico" />
     <script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
+    <script>
+        const applicationId = "A4136689";
+
+        window['__onGCastApiAvailable'] = function (isAvailable) {
+            if (isAvailable) {
+                initializeCastApi();
+            }
+        };
+
+        initializeCastApi = function () {
+            cast.framework.CastContext.getInstance().setOptions({
+                receiverApplicationId: applicationId,
+                autoJoinPolicy: chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED
+            });
+        };
+
+        /**
+         * Just a test functipon
+         */
+        test = function() {
+
+            var castSession = cast.framework.CastContext.getInstance().getCurrentSession();
+            castSession.s
+            alert("tesxxxt");
+        }
+    </script>
 </head>
+
 <body>
+    <button type="button" onclick="test()">button</button>
+    laba
     <google-cast-launcher></google-cast-launcher>
 </body>
+
 </html>
