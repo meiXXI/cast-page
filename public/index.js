@@ -12,7 +12,13 @@ const applicationId = "A4136689";
  * Connect to chrome cast
  */
 connect = function () {
-    alert("xxxx");
+    var castSession = cast.framework.CastContext.getInstance().getCurrentSession();
+
+    var mediaInfo = new chrome.cast.media.MediaInfo("https://ricebean.net/static/media/ricebean-net.2a920808.png", "image/png");
+    var request = new chrome.cast.media.LoadRequest(mediaInfo);
+    castSession.loadMedia(request).then(
+        function () { console.log('Load succeed'); },
+        function (errorCode) { console.log('Error code: ' + errorCode); });
 }
 
 /**
