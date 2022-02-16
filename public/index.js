@@ -25,12 +25,28 @@ connect = function () {
  * Init cast API
  */
 initializeCastApi = function () {
-    
+
     var THE_INSTANCE = cast.framework.CastContext.getInstance();
     THE_INSTANCE.setOptions({
         receiverApplicationId: applicationId,
         autoJoinPolicy: chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED
     });
+
+    var context = cast.framework.CastContext.getInstance();
+    context.addEventListener(
+        cast.framework.CastContextEventType.SESSION_STATE_CHANGED,
+        function (event) {
+            switch (event.sessionState) {
+                case cast.framework.SessionState.SESSION_STARTED:
+                case cast.framework.SessionState.SESSION_RESUMED:
+                    console.log("in");
+                    break;
+                case cast.framework.SessionState.SESSION_ENDED:
+                    console.log('CastContext: CastSession disconnected');
+                    // Update locally as necessary
+                    break;
+            }
+        })
 
     console.log(THE_INSTANCE);
     console.log("init completed.");
