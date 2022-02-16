@@ -1,15 +1,21 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <script type="text/javascript"
-      src="//www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js">
-  </script>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/receiver.css" />
+  <title>Vistaprint cast-page</title>
 </head>
+
 <body>
-  <div>
-    this is a page 
+  <div id="backdrop">
+    Vista cast-page
+    <div id="loader"></div>
   </div>
-  <script>
-    cast.framework.CastReceiverContext.getInstance().start();
-  </script>
+  <div id="log"></div>
+  <div id="flash"><span></span></div>
+  <script src="//www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js"></script>
+  <script src="receiver.js"></script>
 </body>
+
 </html>
